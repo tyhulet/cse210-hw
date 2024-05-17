@@ -16,6 +16,7 @@ class Program
             Console.WriteLine("3. Load");
             Console.WriteLine("4. Save");
             Console.WriteLine("5. Quit");
+            Console.WriteLine("What would you like to do?");
             choice = Console.ReadLine();
 
             if (choice == "1")
