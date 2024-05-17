@@ -25,9 +25,9 @@ public class Journal
 
     }
 
-    public void SaveToFile(string File)
+    public void SaveToFile(string FileName)
     {
-        using (StreamWriter writer = new StreamWriter(File))
+        using (StreamWriter writer = new StreamWriter(FileName))
         {
             foreach (var entry in entries)
             {
@@ -37,12 +37,12 @@ public class Journal
 
     }
 
-    public void LoadFromFile(string File)
+    public void LoadFromFile(string fileName)
     {
         entries.Clear();
         try
         {
-            using (StreamReader reader = new StreamReader(File))
+            using (StreamReader reader = new StreamReader(fileName))
             {
                 string line;
                 while ((line = reader.ReadLine()) != null)
