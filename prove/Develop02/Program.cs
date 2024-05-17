@@ -23,9 +23,9 @@ class Program
             {
                 string prompt = PromptGererator.RandomPrompt();
                 Console.WriteLine($"Prompt: {prompt}");
-                string response = Console.ReadLine();
+                string entries = Console.ReadLine();
 
-                Entry entry = new Entry(prompt, response, DateTime.Now.ToString());
+                Entry entry = new Entry(prompt, entries, DateTime.Now.ToString());
                 journal.AddEntry(entry);
             }
             else if (choice == "2")
