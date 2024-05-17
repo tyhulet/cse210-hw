@@ -1,14 +1,15 @@
+using System.Net;
+
 public class Entry
 {
-    public string _entryText;
+    public string Response;
+    public string Date;
+    public string Prompt;
 
-    public string _date;
-
-    public string _prompt;
-
-    public void Display()
+    public Entry(string prompt, string response, string date)
     {
-        Console.WriteLine($"{_date} : {_prompt}");
-        Console.WriteLine(_entryText);
+        Prompt = prompt;
+        Response = response;
+        Date = date;
     }
 }

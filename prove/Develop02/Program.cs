@@ -17,6 +17,7 @@ class Program
             Console.WriteLine("4. Save");
             Console.WriteLine("5. Quit");
             choice = Console.ReadLine();
+
             if (choice == "1")
             {
 
@@ -24,10 +25,12 @@ class Program
             else if (choice == "2")
             {
 
+
             }
             else if (choice == "3")
             {
-
+                Console.WriteLine("What file are you looking for: ");
+                string LoadFromFile = Console.ReadLine();
             }
             else if (choice == "4")
             {
