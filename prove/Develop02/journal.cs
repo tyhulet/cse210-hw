@@ -20,7 +20,7 @@ public class Journal
     {
         foreach (var entry in entries)
         {
-            Console.WriteLine($"{entry.Date} | {entry.Prompt} | {entry.Response}");
+            Console.WriteLine($"{entry.Date} | {entry.Prompt} | {entry.entryText}");
         }
 
     }
@@ -31,7 +31,7 @@ public class Journal
         {
             foreach (var entry in entries)
             {
-                writer.WriteLine($"{entry.Date} | {entry.Prompt} | {entry.Response}");
+                writer.WriteLine($"{entry.Date} | {entry.Prompt} | {entry.entryText}");
             }
         }
         Console.WriteLine("Saved");
