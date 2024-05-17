@@ -6,7 +6,7 @@ class Program
     {
 
         Console.WriteLine("Welcom to the Journal Program!");
-
+        Journal journal = new Journal();
         string choice;
         do
         {
@@ -20,20 +20,31 @@ class Program
 
             if (choice == "1")
             {
+                string prompt = PromptGererator.RandomPrompt();
+                Console.WriteLine($"Prompt: {prompt}");
+                string response = Console.ReadLine();
 
+                Entry entry = new Entry(prompt, response, DateTime.Now.ToString());
+                journal.AddEntry(entry);
             }
             else if (choice == "2")
             {
+                Console.WriteLine("Journal Entries:");
+                journal.DisplayAll();
 
 
             }
             else if (choice == "3")
             {
                 Console.WriteLine("What file are you looking for: ");
-                string LoadFromFile = Console.ReadLine();
+                string LoadFile = Console.ReadLine();
+                journal.LoadFromFile(LoadFile);
             }
             else if (choice == "4")
             {
+                Console.Write("Enter file name to save: ");
+                string saveFileName = Console.ReadLine();
+                journal.SaveToFile(saveFileName);
 
             }
             else if (choice == "5")
