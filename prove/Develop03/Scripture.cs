@@ -1,4 +1,5 @@
 using System.ComponentModel;
+using System;
 
 public class Scripture
 {
@@ -6,24 +7,37 @@ public class Scripture
 
     private List<Word> _word;
 
-    public Scripture(Reference reference, string text)
+    public Scripture(string book, int chapter, int verse, string text)
     {
-        _reference = reference;
-        _word = text;
+        _reference = new Reference(book, chapter, verse);
+        _word = text.Split(' ').Select(word => new Word(word)).ToList();
+
     }
 
     public void HideRandomWords(int numberToHide)
     {
+        Random random = new Random();
+        List<Word> unhiddenWords = _word.Where(word => !word.isHidden()).ToList();
 
+        if (unhiddenWords.Count > 0)
+        {
+            int randomIndex = random.Next(0, unhiddenWords.Count);
+            unhiddenWords[randomIndex].Hide();
+        }
     }
 
-    public string DisplayText()
+    public void Displaytext()
     {
-        return "";
+        Console.WriteLine($"Reference: {_reference}");
+        foreach (Word word in _word)
+        {
+            Console.WriteLine($"{word.GetDisplayText()}");
+        }
+        Console.WriteLine();
     }
 
-    public void IsCompletelyHidden()
+    public bool completelyHidden()
     {
-
+        return _word.All(word => word.isHidden());
     }
 }
