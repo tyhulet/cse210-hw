@@ -4,11 +4,12 @@ public class Scripture
 {
     private Reference _reference;
 
-    private List<Word> _words;
+    private List<Word> _word;
 
     public Scripture(Reference reference, string text)
     {
-
+        _reference = reference;
+        _word = text;
     }
 
     public void HideRandomWords(int numberToHide)
