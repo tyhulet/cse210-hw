@@ -13,7 +13,7 @@ public class Scripture
         _word = text.Split(' ').Select(word => new Word(word)).ToList();
     }
 
-    public void HideRandomWords()
+    public void hideRandomWords()
     {
         Random random = new Random(2);
         List<Word> unhiddenWords = _word.Where(word => !word.isHidden()).ToList();
@@ -25,7 +25,7 @@ public class Scripture
         }
     }
 
-    public void Displaytext()
+    public void displayText()
     {
         Console.WriteLine($"Reference: {_reference}");
         foreach (Word word in _word)
