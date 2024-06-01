@@ -15,7 +15,7 @@ public class Scripture
 
     public void hideRandomWords()
     {
-        Random random = new Random(2);
+        Random random = new Random();
         List<Word> unhiddenWords = _word.Where(word => !word.isHidden()).ToList();
 
         if (unhiddenWords.Count > 0)
