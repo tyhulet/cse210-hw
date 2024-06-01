@@ -7,16 +7,15 @@ public class Scripture
 
     private List<Word> _word;
 
-    public Scripture(string book, int chapter, int verse, string text)
+    public Scripture(Reference reference, string text)
     {
-        _reference = new Reference(book, chapter, verse);
+        _reference = reference;
         _word = text.Split(' ').Select(word => new Word(word)).ToList();
-
     }
 
-    public void HideRandomWords(int numberToHide)
+    public void HideRandomWords()
     {
-        Random random = new Random();
+        Random random = new Random(2);
         List<Word> unhiddenWords = _word.Where(word => !word.isHidden()).ToList();
 
         if (unhiddenWords.Count > 0)
@@ -36,7 +35,7 @@ public class Scripture
         Console.WriteLine();
     }
 
-    public bool completelyHidden()
+    public bool IsCompletelyHidden()
     {
         return _word.All(word => word.isHidden());
     }
