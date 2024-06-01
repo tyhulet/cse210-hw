@@ -5,8 +5,6 @@ class Program
 {
     static void Main(string[] args)
     {
-        //string reference = "John 3:16";
-        //string text = "For God so loved the world, that He gave His only begotten Son, that whosever believeth in Him should not perish, but have everlasting life.";
         Reference reference = new Reference("John", 3, 16);
         Scripture scripture = new Scripture(reference, "For God so loved the world, that He gave His only begotten Son, that whosever believeth in Him should not perish, but have everlasting life.");
         bool quit = false;
@@ -14,7 +12,7 @@ class Program
         {
             Console.Clear();
             Console.WriteLine("Scripture Memorizer");
-            scripture.Displaytext();
+            scripture.displayText();
 
             Console.Write("Press Enter to hide a word of type 'quit to exit: ");
             string userInput = Console.ReadLine().ToLower();
@@ -25,7 +23,7 @@ class Program
             }
             else
             {
-                scripture.HideRandomWords();
+                scripture.hideRandomWords();
             }
         }
         if (quit)
@@ -35,7 +33,7 @@ class Program
         else
         {
             Console.Clear();
-            scripture.Displaytext();
+            scripture.displayText();
             Console.WriteLine("Great job, you memorized the scripture!");
         }
 
