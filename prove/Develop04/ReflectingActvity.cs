@@ -1,8 +1,14 @@
 public class ReflectingActvity
 {
-    private List<prompts> _reflectionprompts;
+    private List<string> _reflectionprompts = new List<string>()
+    {
 
-    private List<question> __reflectionquestions;
+    };
+
+    private List<string> __reflectionquestions = new List<string>()
+    {
+
+    };
 
     public void RunReflecting()
     {
