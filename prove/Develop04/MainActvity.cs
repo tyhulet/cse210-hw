@@ -20,7 +20,7 @@ public class MainActvity
     {
         Console.Clear();
         Console.WriteLine($"Welcome to the {_name}");
-        Console.WriteLine($"For this actvity {_actvityDescription}");
+        Console.WriteLine($"This actvity {_actvityDescription}");
         Thread.Sleep(3000);
 
     }
@@ -33,9 +33,14 @@ public class MainActvity
         Console.Clear();
     }
 
-    public void timer(int seconds)
+    public void SpinnerTimer(int seconds)
     {
-
+        for (int i = 0; i < seconds; i++)
+        {
+            Console.Write(i);
+            Thread.Sleep(1000);
+            Console.Write("\b \b");
+        }
     }
 
     public void SessionLength()
