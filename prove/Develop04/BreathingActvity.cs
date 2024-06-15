@@ -13,7 +13,7 @@ public class BreathingActivity : MainActvity
         Console.WriteLine("Let's Begain");
         Thread.Sleep(1500);
         Console.WriteLine("Breathe In");
-        CountdownEvent(6);
+        CountdownEvent(5);
 
         Console.WriteLine("Hold it for 2 secounds");
         Thread.Sleep(2000);
