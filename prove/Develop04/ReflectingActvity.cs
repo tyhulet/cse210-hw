@@ -17,6 +17,38 @@ public class ReflectingActivity : MainActvity
         "How can you keep this experience in mind in the furure?"
     };
 
+    public ReflectingActivity()
+    {
+        _name = "Reflecting Actvity";
+        _actvityDescription = "This activity will help you reflect on times in your life when you have shown strength and resilience. This will help you recognize the power you have and how you can use it in other aspects of your life.";
+    }
 
+    public void RunReflectingActvity()
+    {
+        DisplayStartingMessage();
+    }
 
+    public string RandomReflectionPrompt()
+    {
+        Random random = new Random();
+        int index = random.Next(_reflectingprompts.Count());
+        return _reflectingprompts[index];
+    }
+
+    public string RandomReflectionQuestions()
+    {
+        Random question = new Random();
+        int questionIndex = question.Next(_reflectingQuestions.Count());
+        return _reflectingQuestions[questionIndex];
+    }
+
+    public void ShowReflectionPrompt()
+    {
+
+    }
+
+    public void ShowReflectionQuestions()
+    {
+
+    }
 }
