@@ -6,11 +6,14 @@ public class MainActvity
 
     protected int _duration;
 
+    protected int _sessionLengthInput;
+
     public void StartingActvity()
     {
         _name = "";
         _actvityDescription = "";
         _duration = 0;
+        _sessionLengthInput = 0;
     }
 
     public void DisplayStartingMessage()
@@ -24,14 +27,21 @@ public class MainActvity
 
     public void DisplayEndingMessage()
     {
-        Console.WriteLine($"Great Job you completed the actvity!!");
-        Thread.Sleep(3000);
+        Console.WriteLine($"Great Job you completed the actvity!! ");
+        Console.WriteLine($"Returning you to the Actvity options shortly. ");
+        Thread.Sleep(5000);
         Console.Clear();
     }
 
     public void timer(int seconds)
     {
 
+    }
+
+    public void SessionLength()
+    {
+        Console.WriteLine("How long, in seconds, would you like for your session?");
+        _sessionLengthInput = int.Parse(Console.ReadLine());
     }
 
     public void CountdownEvent(int seconds)
