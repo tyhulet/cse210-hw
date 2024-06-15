@@ -10,8 +10,8 @@ public class BreathingActivity : MainActvity
     {
 
         DisplayStartingMessage();
-        Console.WriteLine("We'll begin in 10 seconds.");
-        SpinnerTimer(10);
+        Console.WriteLine("We'll begin Shortly...");
+        SpinnerTimer(5);
         Thread.Sleep(500);
         Console.WriteLine("Let's Begin");
         Thread.Sleep(1500);
