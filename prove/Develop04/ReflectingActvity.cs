@@ -17,4 +17,6 @@ public class ReflectingActivity : MainActvity
         "How can you keep this experience in mind in the furure?"
     };
 
+
+
 }
