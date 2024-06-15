@@ -18,6 +18,7 @@ public class MainActvity
         Console.Clear();
         Console.WriteLine($"Welcome to the {_name}");
         Console.WriteLine($"For this actvity {_actvityDescription}");
+        Thread.Sleep(3000);
 
     }
 
