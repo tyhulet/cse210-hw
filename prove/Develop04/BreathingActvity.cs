@@ -3,7 +3,7 @@ public class BreathingActivity : MainActvity
     public BreathingActivity()
     {
         _name = "Breathing Activity";
-        _actvityDescription = "you will be walked through a breathing excersie.";
+        _actvityDescription = "This activity will help you relax by walking your through breathing in and out slowly. Clear your mind and focus on your breathing.";
     }
 
     public void RunBreathing()
@@ -38,6 +38,5 @@ public class BreathingActivity : MainActvity
 
 
         DisplayEndingMessage();
-        Console.WriteLine("Returning you back to the menu.");
     }
 }
