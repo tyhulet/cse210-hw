@@ -3,14 +3,17 @@ public class BreathingActivity : MainActvity
     public BreathingActivity()
     {
         _name = "Breathing Activity";
-        _actvityDescription = "This activity will help you relax by walking your through breathing in and out slowly. Clear your mind and focus on your breathing.";
+        _actvityDescription = "will help you relax by walking your through breathing in and out slowly. Clear your mind and focus on your breathing.";
     }
 
     public void RunBreathing()
     {
 
         DisplayStartingMessage();
-        Console.WriteLine("Let's Begain");
+        Console.WriteLine("We'll begin in 10 seconds.");
+        SpinnerTimer(10);
+        Thread.Sleep(500);
+        Console.WriteLine("Let's Begin");
         Thread.Sleep(1500);
         Console.WriteLine("Breathe In");
         CountdownEvent(5);
@@ -35,7 +38,6 @@ public class BreathingActivity : MainActvity
         Thread.Sleep(1000);
         Console.WriteLine("Breathe Out");
         CountdownEvent(5);
-
 
         DisplayEndingMessage();
     }
