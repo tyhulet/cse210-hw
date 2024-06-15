@@ -15,46 +15,48 @@ public class ListingActvity : MainActvity
     public ListingActvity()
     {
         _name = "Listing Actvity";
-        _actvityDescription = "This activity will help you reflect on the good things in your life by having you list as many things as you can in a certain area.";
+        _actvityDescription = "will help you reflect on the good things in your life by having you list as many things as you can in a certain area.";
 
     }
 
     public void RunListingActvity()
     {
         DisplayStartingMessage();
-        SessionLength();
         RandomListingPrompt();
+        SessionLength();
         ListFromUser();
         Console.WriteLine();
         DisplayEndingMessage();
     }
 
-    public void ListFromUser()
-    {
-        DateTime startTime = DateTime.Now;
-        DateTime furtureTime = startTime.AddSeconds(10);
-        DateTime currentTime = DateTime.Now;
-        int count = 0;
-        while (currentTime < furtureTime)
-        {
-            Console.Write("> ");
-            Console.ReadLine();
-            count += 1;
-            currentTime = DateTime.Now;
-        }
-        Console.WriteLine();
-        Console.WriteLine($"You listed {count} items.");
-        timer(5);
-    }
-
     public void RandomListingPrompt()
     {
-        Console.WriteLine("Anwser as many time as you can to the flowing prompt: ");
+        Console.WriteLine("Anwser as many times as you can to the flowing prompt: ");
         Console.WriteLine();
         Random random = new Random();
         int promptindex = random.Next(_listingPrompts.Count());
         Console.WriteLine(_listingPrompts[promptindex]);
         Console.WriteLine();
     }
+
+    public void ListFromUser()
+    {
+        DateTime startTime = DateTime.Now;
+        DateTime furtureTime = startTime.AddSeconds(_sessionLengthInput);
+        DateTime currentTime = DateTime.Now;
+        int count = 0;
+        while (currentTime < furtureTime)
+        {
+            Console.Write(" -");
+            Console.ReadLine();
+            count += 1;
+            currentTime = DateTime.Now;
+        }
+        Console.WriteLine();
+        Console.WriteLine($"You listed {count} items.");
+        SpinnerTimer(5);
+    }
+
+
 
 }
