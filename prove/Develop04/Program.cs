@@ -16,7 +16,8 @@ class Program
             choice = Console.ReadLine();
             if (choice == "1")
             {
-
+                BreathingActivity breathingActivity = new BreathingActivity();
+                breathingActivity.RunBreathing();
             }
             else if (choice == "2")
             {
@@ -26,7 +27,7 @@ class Program
             {
 
             }
-            else if (choice == "5")
+            else if (choice == "4")
             {
                 Console.WriteLine("Goodbye");
             }
