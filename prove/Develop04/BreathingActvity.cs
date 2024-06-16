@@ -8,37 +8,31 @@ public class BreathingActivity : MainActvity
 
     public void RunBreathing()
     {
-
         DisplayStartingMessage();
-        Console.WriteLine("We'll begin Shortly...");
-        SpinnerTimer(5);
-        Thread.Sleep(500);
-        Console.WriteLine("Let's Begin");
-        Thread.Sleep(1500);
-        Console.WriteLine("Breathe In");
-        CountdownEvent(5);
-
-        Console.WriteLine("Hold it for 2 secounds");
-        Thread.Sleep(2000);
-
-        Console.WriteLine("Now....");
-        Thread.Sleep(1000);
-        Console.WriteLine("Breathe Out");
-        CountdownEvent(5);
-
-        Console.WriteLine("Let's go again");
-        Thread.Sleep(1000);
-        Console.WriteLine("Breathe In");
-        CountdownEvent(5);
-
-        Console.WriteLine("Hold it for 2 secounds");
-        Thread.Sleep(2000);
-
-        Console.WriteLine("Now....");
-        Thread.Sleep(1000);
-        Console.WriteLine("Breathe Out");
-        CountdownEvent(5);
-
+        SessionLength();
+        SpinnerTimer(3);
+        Breathing();
         DisplayEndingMessage();
+    }
+
+    public void Breathing()
+    {
+        DateTime startTime = DateTime.Now;
+        DateTime furtureTime = startTime.AddSeconds(_sessionLengthInput);
+        DateTime currentTime = DateTime.Now;
+        while (currentTime < furtureTime)
+        {
+            Console.WriteLine("Breath In");
+            CountdownEvent(5);
+            Console.WriteLine("Hold in....");
+            CountdownEvent(2);
+            Thread.Sleep(500);
+            Console.WriteLine("Breath out");
+            CountdownEvent(5);
+            Thread.Sleep(500);
+
+
+            currentTime = DateTime.Now;
+        }
     }
 }
