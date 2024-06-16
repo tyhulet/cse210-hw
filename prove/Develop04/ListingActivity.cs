@@ -47,7 +47,7 @@ public class ListingActvity : MainActivity
         int count = 0;
         while (currentTime < furtureTime)
         {
-            Console.Write(" -");
+            Console.Write("- ");
             Console.ReadLine();
             count += 1;
             currentTime = DateTime.Now;
