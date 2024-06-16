@@ -1,3 +1,4 @@
+using System.Buffers;
 using System.Reflection;
 
 public class ReflectingActivity : MainActvity
@@ -22,31 +23,41 @@ public class ReflectingActivity : MainActvity
     public ReflectingActivity()
     {
         _name = "Reflection Activity";
-        _actvityDescription = "will help you reflect on times in your life when you have shown strength and resilience. This will help you recognize the power you have and how you can use it in other aspects of your life.";
+        _activityDescription = "will help you reflect on times in your life when you have shown strength and resilience. This will help you recognize the power you have and how you can use it in other aspects of your life.";
     }
 
     public void RunReflectingActvity()
     {
         DisplayStartingMessage();
-
+        SpinnerTimer(5);
+        SessionLength();
         RandomReflectionPrompt();
-
+        RandomRefelectionQuestion();
+        Console.WriteLine("After you have answerd, press enter for the next question.");
+        Console.ReadLine();
+        RandomRefelectionQuestion();
+        Console.ReadLine();
+        RandomRefelectionQuestion();
+        Console.ReadLine();
         DisplayEndingMessage();
     }
 
-    public void RandomReflectionPrompt()
+    public string RandomReflectionPrompt()
     {
         Console.WriteLine();
         Random random = new Random();
         int index = random.Next(_reflectingprompts.Count());
         Console.WriteLine(_reflectingprompts[index]);
         Console.WriteLine();
+        return _reflectingprompts[index];
     }
 
     public string RandomRefelectionQuestion()
     {
         Random random = new Random();
         int questionIndex = random.Next(_reflectingQuestions.Count());
+        Console.WriteLine(_reflectingQuestions[questionIndex]);
+        Console.WriteLine();
         return _reflectingQuestions[questionIndex];
     }
 
