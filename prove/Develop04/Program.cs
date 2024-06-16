@@ -21,7 +21,8 @@ class Program
             }
             else if (choice == "2")
             {
-
+                ReflectingActivity reflectingActivity = new ReflectingActivity();
+                reflectingActivity.RunReflectingActvity();
             }
             else if (choice == "3")
             {
