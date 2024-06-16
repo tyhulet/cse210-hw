@@ -35,10 +35,11 @@ public class MainActvity
 
     public void SpinnerTimer(int seconds)
     {
-        for (int i = 0; i < seconds; i++)
+        while (seconds > 0)
         {
-            Console.Write(i);
+            Console.Write(seconds);
             Thread.Sleep(1000);
+            seconds--;
             Console.Write("\b \b");
         }
     }
