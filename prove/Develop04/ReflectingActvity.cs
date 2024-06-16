@@ -20,31 +20,40 @@ public class ReflectingActivity : MainActvity
     public ReflectingActivity()
     {
         _name = "Reflecting Actvity";
-        _actvityDescription = "This activity will help you reflect on times in your life when you have shown strength and resilience. This will help you recognize the power you have and how you can use it in other aspects of your life.";
+        _actvityDescription = "will help you reflect on times in your life when you have shown strength and resilience. This will help you recognize the power you have and how you can use it in other aspects of your life.";
     }
 
     public void RunReflectingActvity()
     {
         DisplayStartingMessage();
+        SessionLength();
+        RandomReflectionPrompt();
+        DisplayEndingMessage();
     }
 
     public string RandomReflectionPrompt()
     {
         Random random = new Random();
-        int index = random.Next(_reflectingprompts.Count());
-        return _reflectingprompts[index];
+        int reflectindex = random.Next(_reflectingprompts.Count());
+        return _reflectingprompts[reflectindex];
     }
 
-    public string RandomReflectionQuestions()
+    public string RandomRefelectionQuestion()
     {
-        Random question = new Random();
-        int questionIndex = question.Next(_reflectingQuestions.Count());
+        Random random = new Random();
+        int questionIndex = random.Next(_reflectingQuestions.Count());
         return _reflectingQuestions[questionIndex];
     }
 
+
     public void ShowReflectionPrompt()
     {
-
+        Console.WriteLine("Anwser as many time as you can to the flowing prompt: ");
+        Console.WriteLine();
+        Random random = new Random();
+        int promptindex = random.Next(_reflectingprompts.Count());
+        Console.WriteLine(_reflectingprompts[promptindex]);
+        Console.WriteLine();
     }
 
     public void ShowReflectionQuestions()
