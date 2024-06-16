@@ -33,12 +33,8 @@ public class ReflectingActivity : MainActvity
         SessionLength();
         RandomReflectionPrompt();
         RandomRefelectionQuestion();
-        Console.WriteLine("After you have answerd, press enter for the next question.");
-        Console.ReadLine();
-        RandomRefelectionQuestion();
-        Console.ReadLine();
-        RandomRefelectionQuestion();
-        Console.ReadLine();
+        ShowreflectingQuestions();
+        Thread.Sleep(5000);
         DisplayEndingMessage();
     }
 
@@ -61,5 +57,19 @@ public class ReflectingActivity : MainActvity
         return _reflectingQuestions[questionIndex];
     }
 
+    public void ShowreflectingQuestions()
+    {
+        DateTime startTime = DateTime.Now;
+        DateTime furtureTime = startTime.AddSeconds(_sessionLengthInput);
+        DateTime currentTime = DateTime.Now;
+        while (currentTime < furtureTime)
+        {
+            Console.WriteLine("After you have answerd, press enter for the next question.");
+            Console.ReadLine();
+            RandomRefelectionQuestion();
+            Thread.Sleep(6000);
 
+            currentTime = DateTime.Now;
+        }
+    }
 }
