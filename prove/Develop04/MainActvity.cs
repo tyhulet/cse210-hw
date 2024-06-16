@@ -2,7 +2,7 @@ public class MainActvity
 {
     protected string _name;
 
-    protected string _actvityDescription;
+    protected string _activityDescription;
 
     protected int _duration;
 
@@ -11,8 +11,8 @@ public class MainActvity
     public void StartingActvity()
     {
         _name = "";
-        _actvityDescription = "";
-        _duration = 0;
+        _activityDescription = "";
+        _duration = 10;
         _sessionLengthInput = 0;
     }
 
@@ -20,7 +20,7 @@ public class MainActvity
     {
         Console.Clear();
         Console.WriteLine($"Welcome to the {_name}");
-        Console.WriteLine($"This actvity {_actvityDescription}");
+        Console.WriteLine($"This actvity {_activityDescription}");
         Thread.Sleep(3000);
 
     }
