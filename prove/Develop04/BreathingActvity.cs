@@ -3,7 +3,7 @@ public class BreathingActivity : MainActvity
     public BreathingActivity()
     {
         _name = "Breathing Activity";
-        _actvityDescription = "will help you relax by walking your through breathing in and out slowly. Clear your mind and focus on your breathing.";
+        _activityDescription = "will help you relax by walking your through breathing in and out slowly. Clear your mind and focus on your breathing.";
     }
 
     public void RunBreathing()
