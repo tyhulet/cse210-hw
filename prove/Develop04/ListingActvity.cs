@@ -15,7 +15,7 @@ public class ListingActvity : MainActvity
     public ListingActvity()
     {
         _name = "Listing Actvity";
-        _actvityDescription = "will help you reflect on the good things in your life by having you list as many things as you can in a certain area.";
+        _activityDescription = "will help you reflect on the good things in your life by having you list as many things as you can in a certain area.";
 
     }
 
