@@ -7,6 +7,11 @@ public class GoalTracker
     private int _playerScore;
 
 
+    public void Goalstracker()
+    {
+        _playerScore = 0;
+    }
+
     public void Start()
     {
 
