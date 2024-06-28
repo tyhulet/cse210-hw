@@ -1,27 +1,25 @@
-public class Goals
+using System.Diagnostics.Contracts;
+
+public abstract class Goals
 {
-    private string _goalName;
+    protected string _goalName;
 
-    private string _goalDescription;
+    protected string _goalDescription;
 
-    private int _points;
+    protected int _points;
 
     public Goals(string goalName, string goalDescription, int points)
     {
         _goalName = goalName;
         _goalDescription = goalDescription;
-        _points = 0;
+        _points = points;
     }
 
-    public virtual void RecordEvent()
-    {
+    public abstract int RecordEvent();
 
-    }
+    public abstract bool CompletedGoal();
 
-    public bool CompletedGoal()
-    {
-        return true;
-    }
+    public abstract string GetStringRepresentation();
 
 
 }
