@@ -5,8 +5,18 @@ public class EnternalGoals : Goals
 
     }
 
-    public override void RecordEvent()
+    public override int RecordEvent()
     {
+        return _points;
+    }
 
+    public override bool CompletedGoal()
+    {
+        return false;
+    }
+
+    public override string GetStringRepresentation()
+    {
+        return ($"EternalGoals: {_goalName}, {_goalDescription}, {_points}");
     }
 }
