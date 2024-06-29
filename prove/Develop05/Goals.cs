@@ -19,7 +19,8 @@ public abstract class Goals
 
     public abstract bool CompletedGoal();
 
-    public abstract string GetStringRepresentation();
-
-
+    public virtual string GetStringRepresentation()
+    {
+        return $"{_goalName} | {_goalDescription} | {_points}";
+    }
 }
