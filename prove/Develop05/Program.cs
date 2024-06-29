@@ -4,10 +4,11 @@ class Program
 {
     static void Main(string[] args)
     {
-
         var choice = "";
         do
         {
+            GoalTracker goal = new GoalTracker();
+            goal.ShowUserInfo();
             Console.WriteLine("Goal Menu Options");
             Console.WriteLine("1. Create New Goal");
             Console.WriteLine("2. List Goals");
