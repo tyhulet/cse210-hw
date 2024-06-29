@@ -26,17 +26,17 @@ class Program
             else if (choice == "2")
             {
                 GoalTracker goalTracker = new GoalTracker();
-                goalTracker.ShowGoals(); goalTracker.ShowGoalsDetails();
+                goalTracker.ShowGoalsDetails();
             }
             else if (choice == "3")
             {
                 GoalTracker goalTracker = new GoalTracker();
-                goalTracker.SaveFile();
+                goalTracker.SaveGoalFile();
             }
             else if (choice == "4")
             {
                 GoalTracker goalTracker = new GoalTracker();
-                goalTracker.LoadFile();
+                goalTracker.LoadGoalFile();
             }
             else if (choice == "5")
             {
