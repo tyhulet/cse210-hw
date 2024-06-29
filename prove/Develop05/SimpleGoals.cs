@@ -1,6 +1,6 @@
 public class SimpleGoals : Goals
 {
-    protected bool _goalCompleted;
+    private bool _goalCompleted;
     public SimpleGoals(string goalName, string goalDescription, int points) : base(goalName, goalDescription, points)
     {
 
@@ -14,7 +14,6 @@ public class SimpleGoals : Goals
             return _points;
         }
         return 0;
-
     }
 
     public override bool CompletedGoal()
