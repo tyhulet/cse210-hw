@@ -2,19 +2,14 @@ using System.Configuration.Assemblies;
 
 public class GoalTracker
 {
-    protected List<Goals> _goals = new List<Goals>();
+    private List<Goals> _goals = new List<Goals>();
 
-    protected int _playerScore;
+    private int _playerScore;
 
 
     public void Goalstracker()
     {
         _playerScore = 0;
-    }
-
-    public void Start()
-    {
-
     }
 
     public void ShowUserInfo()
@@ -24,12 +19,11 @@ public class GoalTracker
 
     public void AddGoals()
     {
-        var choice = "";
         Console.WriteLine("What type of goal would you like to make?");
         Console.WriteLine("1. Simple Goals");
         Console.WriteLine("2. Eternal Goals");
         Console.WriteLine("3. CheckList Goals");
-        choice = Console.ReadLine();
+        string choice = Console.ReadLine();
 
         if (choice == "1")
         {
@@ -73,29 +67,55 @@ public class GoalTracker
         Console.WriteLine();
     }
 
-    public void ShowGoals()
-    {
-
-    }
-
     public void ShowGoalsDetails()
     {
 
     }
 
-    public void LoadFile()
+    public void LoadGoalFile()
     {
+        Console.WriteLine("Enter the filename you need: ");
+        string LoadFile = Console.ReadLine();
+        using (StreamReader outputfile = new StreamReader(LoadFile))
+        {
+            string[] lines = File.ReadAllLines(LoadFile);
+            _playerScore = int.Parse(lines[0]);
 
+            foreach (string line in lines)
+            {
+                string[] parts = line.Split(", ");
+                string goalType = parts[0].Split(":")[0];
+                string _goalName = parts[1];
+                string _goalDescription = parts[2];
+                int _playerScore = int.Parse(parts[3]);
+            }
+        }
 
     }
 
-    public void SaveFile()
+    public void SaveGoalFile()
     {
-
+        Console.WriteLine("Enter the name of the file you would like to save: ");
+        string GoalFile = Console.ReadLine();
+        using (StreamWriter outputfile = new StreamWriter(GoalFile))
+        {
+            outputfile.WriteLine(_playerScore);
+            foreach (Goals _goals in _goals)
+            {
+                outputfile.WriteLine(_goals.GetStringRepresentation());
+            }
+        }
+        Console.WriteLine("Goal File Saved");
     }
 
     public void RecordEvent()
     {
-
+        Console.WriteLine("Which Goal did you accomplish?");
+        int index = int.Parse(Console.ReadLine());
+        if (index >= 0 && index < _goals.Count)
+        {
+            _playerScore += _goals[index].RecordEvent();
+        }
+        Console.WriteLine($"Your current Score is: {_playerScore}");
     }
 }
