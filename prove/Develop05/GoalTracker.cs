@@ -69,27 +69,15 @@ public class GoalTracker
 
     public void ShowGoalsDetails()
     {
-
+        for (int i = 0; i < _goals.Count; i++)
+        {
+            Console.WriteLine($"{i + 1}.{_goals[i]}.{_goals[i].GetStringRepresentation()}");
+        }
     }
 
     public void LoadGoalFile()
     {
-        Console.WriteLine("Enter the filename you need: ");
-        string LoadFile = Console.ReadLine();
-        using (StreamReader outputfile = new StreamReader(LoadFile))
-        {
-            string[] lines = File.ReadAllLines(LoadFile);
-            _playerScore = int.Parse(lines[0]);
 
-            foreach (string line in lines)
-            {
-                string[] parts = line.Split(", ");
-                string goalType = parts[0].Split(":")[0];
-                string _goalName = parts[1];
-                string _goalDescription = parts[2];
-                int _playerScore = int.Parse(parts[3]);
-            }
-        }
 
     }
 
