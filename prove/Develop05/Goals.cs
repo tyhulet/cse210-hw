@@ -21,6 +21,6 @@ public abstract class Goals
 
     public virtual string GetStringRepresentation()
     {
-        return $"{_goalName} | {_goalDescription} | {_points}";
+        return $"{_goalName}, {_goalDescription}, {_points}";
     }
 }
