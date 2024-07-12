@@ -34,7 +34,7 @@ public class Videos
         Console.WriteLine($"Video Author: {_videoAuthor}");
         Console.WriteLine($"Video Length in Secounds: {_videoLength}");
         int totalcomments = commentsCounter();
-        Console.WriteLine($"Totla number of comments: {totalcomments}");
+        Console.WriteLine($"Total number of comments: {totalcomments}");
 
         foreach (Comments comment in _comment)
         {
