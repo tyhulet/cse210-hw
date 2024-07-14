@@ -46,15 +46,16 @@ public class Orders
         }
     }
 
-    public void ShippingInfo()
+    public string ShippingInfo()
     {
-        Console.WriteLine($"{_customers}, {_customers.DisplayCustomerInfo}");
+        return $"{_customers}, {_customers.DisplayCustomerInfo}";
     }
 
     public void DisplayOrder()
     {
         Console.WriteLine($"Packing Label: {PackingInfo}");
-        Console.WriteLine($"Packing Label: {ShippingInfo}");
-        Console.WriteLine($"Total Cost: {TotalCost}");
+        Console.WriteLine($"Shipping Label: {ShippingInfo()}");
+        double totalcost = TotalCost();
+        Console.WriteLine($"Total Cost: {totalcost}");
     }
 }
