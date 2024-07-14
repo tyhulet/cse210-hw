@@ -49,6 +49,7 @@ class Program
 
         foreach (Videos video in videos)
         {
+            Console.WriteLine("=================================================================================");
             video.DisplayVideoInfo();
         }
     }
