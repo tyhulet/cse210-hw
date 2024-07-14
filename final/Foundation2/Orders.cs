@@ -12,28 +12,49 @@ public class Orders
         _customers = customer;
     }
 
-    public void AddProducts()
+    public void AddProducts(Products products)
     {
-
+        _products.Add(products);
     }
 
-    public int TotalCost()
+    public double TotalCost()
     {
-        return TotalCost();
+        double total = 0;
+        foreach (Products products in _products)
+        {
+            total += products.CalculateCost();
+        }
+
+        double shippingCost;
+        if (_customers.OutsideUsa())
+        {
+            shippingCost = 5;
+        }
+        else
+        {
+            shippingCost = 35;
+        }
+        total += shippingCost;
+        return total;
     }
 
-    public string PackingInfo()
+    public void PackingInfo()
     {
-        return PackingInfo();
+        foreach (Products products in _products)
+        {
+            products.ShowProductInfo();
+        }
     }
 
-    public string ShippingInfo()
+    public void ShippingInfo()
     {
-        return ShippingInfo();
+        Console.WriteLine($"{_customers}, {_customers.DisplayCustomerInfo}");
     }
 
-    public string DisplayOrder()
+    public void DisplayOrder()
     {
-        return DisplayOrder();
+        Console.WriteLine($"Packing Label: {PackingInfo}");
+        Console.WriteLine($"Packing Label: {ShippingInfo}");
+        Console.WriteLine($"Total Cost: {TotalCost}");
     }
 }
