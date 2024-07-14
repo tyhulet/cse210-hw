@@ -14,8 +14,8 @@ public class Customer
         return _customerAddress.OutsideUsa();
     }
 
-    public void DisplayCustomerInfo()
+    public string DisplayCustomerInfo()
     {
-        Console.WriteLine($"{_customerName}, {_customerAddress.DisplayAddress}");
+        return $"{_customerName}, {_customerAddress.DisplayAddress}";
     }
 }
