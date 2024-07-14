@@ -1,11 +1,21 @@
 public class Customer
 {
     private string _customerName;
-    private Address _custromerAddress;
+    private Address _customerAddress;
 
     public Customer(string Name, Address address)
     {
         _customerName = Name;
-        _custromerAddress = address;
+        _customerAddress = address;
+    }
+
+    public bool OutsideUsa()
+    {
+        return _customerAddress.OutsideUsa();
+    }
+
+    public void DisplayCustomerInfo()
+    {
+        Console.WriteLine($"{_customerName}, {_customerAddress.DisplayAddress}");
     }
 }

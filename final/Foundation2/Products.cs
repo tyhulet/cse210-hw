@@ -12,4 +12,14 @@ public class Products
         _productPrice = productPrice;
         _productQuantity = productQuantity;
     }
+
+    public double CalculateCost()
+    {
+        return CalculateCost();
+    }
+
+    public void ShowProductInfo()
+    {
+
+    }
 }
