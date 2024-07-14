@@ -15,11 +15,12 @@ public class Products
 
     public double CalculateCost()
     {
-        return CalculateCost();
+        return _productPrice * _productQuantity;
     }
 
     public void ShowProductInfo()
     {
-
+        Console.WriteLine($"ID:{_productId} : Product Name {_productName}");
+        Console.WriteLine($"Product cost: {CalculateCost}");
     }
 }
