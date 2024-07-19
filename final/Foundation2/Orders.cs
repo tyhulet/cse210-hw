@@ -40,21 +40,21 @@ public class Orders
 
     public void PackingInfo()
     {
+        Console.WriteLine("Packing Label:");
         foreach (Products products in _products)
         {
             products.ShowProductInfo();
         }
     }
 
-    public string ShippingInfo()
+    public void ShippingInfo()
     {
-        return $"{_customers}, {_customers.DisplayCustomerInfo}";
+        Console.WriteLine($"{_customers}: {_customers.DisplayCustomerInfo}");
     }
 
     public void DisplayOrder()
     {
-        Console.WriteLine($"Packing Label: {PackingInfo}");
-        Console.WriteLine($"Shipping Label: {ShippingInfo()}");
+        Console.WriteLine($"Shipping Label: {_customers.DisplayCustomerInfo()}, {_customers.ShowCustomerAddress}");
         double totalcost = TotalCost();
         Console.WriteLine($"Total Cost: {totalcost}");
     }

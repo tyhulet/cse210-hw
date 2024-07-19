@@ -20,7 +20,6 @@ public class Products
 
     public void ShowProductInfo()
     {
-        Console.WriteLine($"ID:{_productId} : Product Name {_productName}");
-        Console.WriteLine($"Product cost: {CalculateCost}");
+        Console.WriteLine($"ID: {_productId}: Product Name: {_productName} = Price: {_productPrice}");
     }
 }

@@ -1,3 +1,5 @@
+using System.Runtime.CompilerServices;
+
 public class Address
 {
     private string _streetAddress;
@@ -18,8 +20,8 @@ public class Address
         return _country == "usa";
     }
 
-    public string DisplayAddress()
+    public void DisplayAddress()
     {
-        return $"{_streetAddress}, {_cityName}, {_state}, {_country}";
+        Console.WriteLine($"{_streetAddress}, {_cityName}, {_state}, {_country}");
     }
 }
