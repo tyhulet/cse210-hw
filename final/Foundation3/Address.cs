@@ -13,11 +13,6 @@ public class Address
         _country = country;
     }
 
-    public bool OutsideUsa()
-    {
-        return _country == "usa";
-    }
-
     public string DisplayAddress()
     {
         return $"{_streetAddress}, {_cityName}, {_state}, {_country}";
