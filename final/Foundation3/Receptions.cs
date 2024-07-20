@@ -8,7 +8,7 @@ public class Receptions : Events
         _emailRSVP = emailRSVP;
     }
 
-    public void DisplayRecptions()
+    public void DisplayRSVP()
     {
         Console.WriteLine($"Email Rsvp: {_emailRSVP}");
     }
