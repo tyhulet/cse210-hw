@@ -1,7 +1,7 @@
 public class Actvitys
 {
     private string _date;
-    private int _minuntes;
+    protected int _minuntes;
 
     public Actvitys(string date, int minuntes)
     {
@@ -9,23 +9,23 @@ public class Actvitys
         _minuntes = minuntes;
     }
 
-
-    public abstract string ActvitySummary()
+    public virtual double GetDistance()
     {
-
-    }
-    public abstract double getDistance()
-    {
-
+        return GetDistance();
     }
 
-    public abstract double getSpeed()
+    public virtual double GetSpeed()
     {
-
+        return GetSpeed();
     }
 
-    public abstract double getPace()
+    public virtual double GetPace()
     {
+        return GetPace();
+    }
 
+    public virtual string ActvitySummary()
+    {
+        return ActvitySummary();
     }
 }
