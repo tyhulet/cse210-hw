@@ -1,28 +1,33 @@
+using System.Data;
+
 public class SwimmingActvity : Actvitys
 {
     private int _swimmingLaps;
 
-    public SwimmingActvity(int swimmingLaps) : base(date, minuntes)
+    public SwimmingActvity(string date, int minuntes, int swimmingLaps) : base(date, minuntes)
     {
         _swimmingLaps = swimmingLaps;
     }
 
+    public override double GetDistance()
+    {
+
+        return _swimmingLaps * 50 / 1000 * .62;
+    }
+
+    public override double GetSpeed()
+    {
+        return GetDistance() / _minuntes * 60;
+    }
+
+    public override double GetPace()
+    {
+        return _minuntes / GetDistance();
+    }
+
     public override string ActvitySummary()
     {
-
-    }
-    public override double getDistance()
-    {
-
-    }
-
-    public override double getSpeed()
-    {
-
-    }
-
-    public override double getPace()
-    {
-
+        string swimming = $"Swimming:";
+        return swimming;
     }
 }
