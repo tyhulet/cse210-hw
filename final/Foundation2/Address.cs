@@ -20,8 +20,8 @@ public class Address
         return _country == "usa";
     }
 
-    public void DisplayAddress()
+    public string DisplayAddress()
     {
-        Console.WriteLine($"{_streetAddress}, {_cityName}, {_state}, {_country}");
+        return $"{_streetAddress}, {_cityName}, {_state}, {_country}";
     }
 }

@@ -19,8 +19,8 @@ public class Customer
         return $"{_customerName}";
     }
 
-    public void ShowCustomerAddress()
+    public string ShowCustomerAddress()
     {
-        Console.WriteLine($"{_customerAddress.DisplayAddress}");
+        return $"{_customerAddress.DisplayAddress}";
     }
 }
