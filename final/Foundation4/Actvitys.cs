@@ -1,6 +1,6 @@
 public class Actvitys
 {
-    private string _date;
+    protected string _date;
     protected int _minuntes;
 
     public Actvitys(string date, int minuntes)
@@ -24,8 +24,7 @@ public class Actvitys
         return GetPace();
     }
 
-    public virtual string ActvitySummary()
+    public virtual void ActvitySummary()
     {
-        return ActvitySummary();
     }
 }

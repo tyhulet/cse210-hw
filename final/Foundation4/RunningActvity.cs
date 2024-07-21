@@ -1,30 +1,31 @@
 using System.Security.Cryptography.X509Certificates;
 
-public class RunniingActvity : Actvitys
+public class RunningActvity : Actvitys
 {
     private double _milesRan;
 
-    public RunniingActvity(string date, int minuntes, double milesRan) : base(date, minuntes)
+    public RunningActvity(string date, int minuntes, double milesRan) : base(date, minuntes)
     {
         _milesRan = milesRan;
-    }
-    public override string ActvitySummary()
-    {
-        return ActvitySummary();
     }
 
     public override double GetDistance()
     {
-        return 0;
+        return _milesRan;
     }
 
     public override double GetSpeed()
     {
-        return 0;
+        return GetDistance() / _minuntes * 60;
     }
 
     public override double GetPace()
     {
-        return 0;
+        return Math.Round(_minuntes / GetDistance(), 2);
+    }
+
+    public override void ActvitySummary()
+    {
+        Console.WriteLine($"{_date}, Running ({_minuntes} mins): Distance {GetDistance()} Miles, Speed {GetSpeed()} MPH, Pace {GetPace()} min per mile");
     }
 }

@@ -11,7 +11,6 @@ public class SwimmingActvity : Actvitys
 
     public override double GetDistance()
     {
-
         return _swimmingLaps * 50 / 1000 * .62;
     }
 
@@ -22,12 +21,11 @@ public class SwimmingActvity : Actvitys
 
     public override double GetPace()
     {
-        return _minuntes / GetDistance();
+        return Math.Round(_minuntes / GetDistance(), 2);
     }
 
-    public override string ActvitySummary()
+    public override void ActvitySummary()
     {
-        string swimming = $"Swimming:";
-        return swimming;
+        Console.WriteLine($"{_date}, Swimming ({_minuntes} mins): Distance {GetDistance()} Miles, Speed {GetSpeed()} MPH, Pace {GetPace()} min per mile");
     }
 }

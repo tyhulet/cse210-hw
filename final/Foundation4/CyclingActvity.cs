@@ -9,14 +9,10 @@ public class CyclingActvity : Actvitys
         _averageSpeed = avereageSpeed;
     }
 
-    public override string ActvitySummary()
-    {
-        return ActvitySummary();
-    }
     public override double GetDistance()
     {
 
-        return 0;
+        return Math.Round(_averageSpeed / _minuntes * 60, 2);
     }
 
     public override double GetSpeed()
@@ -26,6 +22,11 @@ public class CyclingActvity : Actvitys
 
     public override double GetPace()
     {
-        return GetPace();
+        return Math.Round(_minuntes / GetDistance(), 2);
+    }
+
+    public override void ActvitySummary()
+    {
+        Console.WriteLine($"{_date}, Cycling ({_minuntes} mins): Distance {GetDistance()} Miles, Speed {GetSpeed()} MPH, Pace {GetPace()} min per mile");
     }
 }
